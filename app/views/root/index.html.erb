@@ -1,0 +1,9 @@
+<h3>Most Recently Added Restaurants</h3>
+
+<ul>
+  <% @restaurant.first(10).each do |restaurant| %>
+    <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </li>
+  <% end %>
+</ul>

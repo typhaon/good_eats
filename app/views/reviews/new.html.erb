@@ -1,0 +1,30 @@
+<h4>Add a Review</h4>
+
+for <%= @restaurant.name %>
+
+<%= form_for([@restaurant, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+  <div>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </div>
+
+    <div>
+    <%= f.label :body %>
+    <%= f.text_area :body%>
+  </div>
+
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
